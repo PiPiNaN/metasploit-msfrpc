@@ -6,9 +6,9 @@ RUN apt-get update && apt-get install -y curl apt-utils nmap ruby ruby-dev postg
 	chmod 755 msfinstall && \
 	./msfinstall
 	
-RUN service postgresql start
+RUN service postgresql start && msfdb init && msfconsole
 #RUN gem update && gem install msgpack
 
-
+EXPOSE 5432
 EXPOSE 55553
 CMD msfrpcd -P 123456 -n -f -a 0.0.0.0
