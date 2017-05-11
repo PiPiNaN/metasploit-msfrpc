@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
 #https://github.com/rapid7/metasploit-framework/wiki/Nightly-Installers
-RUN apt-get update && apt-get install -y curl apt-utils nmap python ruby ruby-dev postgresql && \
-	curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+RUN apt-get update && apt-get install -y curl apt-utils nmap python ruby ruby-dev postgresql 
+RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
 	chmod 755 msfinstall && \
 	./msfinstall
 	
