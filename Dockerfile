@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 #https://github.com/rapid7/metasploit-framework/wiki/Nightly-Installers
 RUN apt-get update && apt-get install -y curl apt-utils nmap python ruby ruby-dev postgresql 
